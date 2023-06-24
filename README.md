@@ -1,4 +1,4 @@
-# Dev Folio
+# Front Folio
 
 Front Folio is a lightweight, fully responsive portfolio.
 
