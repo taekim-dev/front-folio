@@ -10,3 +10,8 @@ function App() {
 }
 
 export default App;
+
+/*To do*/
+// 1. Get a repsponsive design
+// 2. Get a sample data set
+// 3. Test the look and feel
