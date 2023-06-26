@@ -4,7 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Front Folio!</h1>
+      <h1>Front Folio</h1>
+      <div className="text-lg ml-2">Welcome to Front Folio!</div>
     </div>
   );
 }
