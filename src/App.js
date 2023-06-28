@@ -1,18 +1,39 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react'
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './theme';
+import Toggle from './components/Toggle';
+import styled from 'styled-components';
+
+const StyledApp = styled.div`
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.body};
+  transition: all 0.25s linear;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Front Folio</h1>
-      <div className="text-lg ml-2">Welcome to Front Folio!</div>
-    </div>
-  );
+    const [theme, setTheme] = useState('light');
+
+    const toggleTheme = () => {
+        if (theme === 'light') {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    }
+
+    return (
+        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+          <>
+            <Toggle theme={theme} toggleTheme={toggleTheme} />
+            <StyledApp>
+              // Your content goes here. For example:
+              <h1>Hello, I'm Taewan Kim</h1>
+              <p>I am a software engineer</p>
+              // And so on...
+            </StyledApp>
+          </>
+        </ThemeProvider>
+    );
 }
 
 export default App;
-
-/*To do*/
-// 1. Get a repsponsive design
-// 2. Get a sample data set
-// 3. Test the look and feel
